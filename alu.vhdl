@@ -33,7 +33,7 @@ SIGNAL result : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 BEGIN
     WITH op_sel SELECT
-	    result <= (a_in + b_in)         WHEN "0000",  -- ADD operation
+        result <= (a_in + b_in)         WHEN "0000",  -- ADD operation
             (a_in + b_in + c_in)        WHEN "0001",  -- ADDC operation
             (a_in- b_in)                WHEN "0010",  -- SUB operation
             (a_in - b_in)               WHEN "0011",  -- SUBC operation
@@ -54,10 +54,10 @@ BEGIN
         c_out <= '1' WHEN (op_sel = "0000" AND a_in(0) = '1' AND b_in(0) = '1') OR
                           (op_sel = "0001" AND a_in(0) = '1' AND b_in(0) = '1') OR
                           (op_sel = "0001" AND a_in(0) = '0' AND b_in(0) = '1') OR
-					      (op_sel = "0011" AND a_in(0) = '0' AND b_in(0) = '1') ELSE
+                          (op_sel = "0011" AND a_in(0) = '0' AND b_in(0) = '1') ELSE
 
                  '0' WHEN (op_sel = "0100") OR
-				 	      (op_sel = "0101") OR
+                          (op_sel = "0101") OR
                           (op_sel = "0110") OR
                           (op_sel = "0111") OR
                           (op_sel = "1111") ELSE
